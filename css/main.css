@@ -116,7 +116,7 @@ section {
     flex-basis: 200px;
     font-weight: 600;
     background-size: 200% auto;
-    transition: 0.25s ease-in;
+    transition: 0.15s ease-in;
     margin: 1rem 0;
 }
 

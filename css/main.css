@@ -15,6 +15,16 @@ body {
     color: #222;
     width: 100%;
     height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+main {
+    background-color: #fbfbfb;
+}
+
+a {
+    text-decoration: none;
 }
 
 nav {
@@ -103,8 +113,8 @@ header {
     font-weight: bold;
 }
 
-.about, .skills {
-    width: 80%;
+.about, .skills, .contact {
+    width: 85%;
     margin: auto;
 }
 
@@ -150,10 +160,6 @@ section > h2 {
 
 .buttons > *:hover {
     background-position: right center;
-}
-
-.sections {
-    background-color: #fbfbfb;
 }
 
 .content {
@@ -217,7 +223,7 @@ section > h2 {
 }
 
 .description {
-    padding: 20px;
+    padding: 30px;
     text-align: justify;
     flex: 1;
     min-width: 400px;
@@ -245,7 +251,7 @@ section > h2 {
 }
 
 .skills_frame > img {
-    margin-bottom: 20px;
+    margin: 20px 0;
     height: 100px;
 }
 
@@ -260,14 +266,86 @@ section > h2 {
     }
 }
 
+.portfolio_header {
+    margin-left: calc(7.5% + 20px);
+}
+
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+.portfolio > div {
+    height: 400px;
+    padding: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0.6), 
+                    rgba(0, 123, 255, 0.6));
+    transition: .5s ease;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.portfolio > div:hover .overlay {
+    opacity: 1;
+}
+
+.codewars {
+    background-image: url(../img/codewars.png);
+}
+
+.dignclick {
+    background-image: url(../img/dignclick.jpg);
+}
+
+.portfolio_webpage {
+    background-image: url(../img/portfolio_webpage.png);
+}
+
+.overlay_button {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
+    background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-position: left center;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    background-size: 200% auto;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    position: absolute;
+    bottom: calc(20px + 2rem);
+    left: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.overlay_button:hover {
+    background-position: right center;
+}
+
 footer {
     width: 100%;
     padding: 1em 0;
+    height: 20px;
     text-align: center;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);

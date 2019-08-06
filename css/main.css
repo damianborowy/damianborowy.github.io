@@ -96,7 +96,10 @@ header {
 .about, .skills {
     width: 80%;
     margin: auto;
-    padding: 2rem 0;
+}
+
+section {
+    padding: 50px 0;
 }
 
 section > h2 {
@@ -149,7 +152,6 @@ section > h2 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    flex-basis: 500px;
 }
 
 .data {
@@ -184,6 +186,7 @@ section > h2 {
 
 .detail {
     color: var(--main-color);
+    font-weight: 600;
 }
 
 .description {
@@ -203,6 +206,30 @@ section > h2 {
 @media screen and (max-width: 600px) {
     .description {
         min-width: unset;
+    }
+}
+
+.content > .skills_frame {
+    flex: 1;
+    padding: 20px;
+    line-height: 2;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.skills_frame > img {
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+.back {
+    border-right: 2px dotted var(--main-color);
+}
+
+@media screen and (max-width: 545px) {
+    .back {
+        border-right: 0;
+        border-bottom: 2px dotted var(--main-color);
     }
 }
 

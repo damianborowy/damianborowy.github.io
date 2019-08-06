@@ -145,7 +145,7 @@ section > h2 {
 .content {
     background-color: #fff;
     box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
-    padding: 40px;
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -158,12 +158,13 @@ section > h2 {
     align-items: center;
     justify-content: space-around;
     border-right: 2px dotted var(--main-color);
-    padding: 0 20px;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .data > * {
     margin: 0 10px;
+    padding: 20px;
 }
 
 .photo {
@@ -173,11 +174,11 @@ section > h2 {
     min-height: 130px;
     box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     border-radius: 100%;
+    box-sizing: border-box;
 }
 
 .data > ul {
     list-style-type: none;
-    padding: 0;
     line-height: 2.5;
 }
 
@@ -186,9 +187,23 @@ section > h2 {
 }
 
 .description {
-    padding: 0 20px;
+    padding: 20px;
     text-align: justify;
     flex: 1;
+    min-width: 400px;
+}
+
+@media screen and (max-width: 1211px) {
+    .data {
+        border-right: 0;
+        border-bottom: 2px dotted var(--main-color);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .description {
+        min-width: unset;
+    }
 }
 
 footer {

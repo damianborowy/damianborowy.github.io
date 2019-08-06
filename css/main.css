@@ -180,6 +180,22 @@ section > h2 {
     padding: 20px;
 }
 
+.data ul li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    line-height: 1.3;
+    padding: 5px;
+    grid-gap: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .data ul li {
+        grid-template-columns: 1fr;
+        text-align: center;
+        grid-gap: 0;
+    }
+}
+
 .photo {
     background-image: url(../img/me.png);
     background-size: cover;
@@ -242,6 +258,11 @@ section > h2 {
         border-right: 0;
         border-bottom: 2px dotted var(--main-color);
     }
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 footer {

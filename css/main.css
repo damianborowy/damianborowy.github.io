@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
+:root {
+    --main-color: #007bff;
+    --second-color: #00bbff;
+}
+
 html {
     font-size: 10px;
 }
@@ -17,7 +22,6 @@ nav {
     background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
 }
 
@@ -47,35 +51,34 @@ nav ul li:before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #007bff;
+    background-color: var(--main-color);
     visibility: hidden;
     -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-        transform: scaleX(0);
-    transition: 0.2s ease-in-out 0s;
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
     -webkit-transition: 0.2s ease-in-out 0s;
-    -moz-transition: 0.2s ease-in-out 0s;
-    -ms-transition: 0.2s ease-in-out 0s;
     -o-transition: 0.2s ease-in-out 0s;
+    transition: 0.2s ease-in-out 0s;
 }
 
 nav ul li:hover:before {
     visibility: visible;
     -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
 }
 
 header {
-    background: #fff url(../img/bg.png) top center repeat fixed;
+    background: #fff url(../img/bg.png) top center repeat;
     text-align: center;
     padding: 150px 0 90px 0;
     font-size: 2.5rem;
 }
 
 .welcome {
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: bold;
-    color: #007bff;
+    color: var(--main-color);
 }
 
 .media {
@@ -90,38 +93,102 @@ header {
     font-weight: bold;
 }
 
-section {
-    width: 70%;
+.about, .skills {
+    width: 80%;
     margin: auto;
+    padding: 2rem 0;
+}
+
+section > h2 {
+    margin-left: 20px;
 }
 
 .buttons {
     text-align: center;
     padding: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .buttons > * {
-    background-image: linear-gradient(to right, #007bff 0%, #00bbff 51%, #007bff 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
+    background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
     background-position: left center;
     border-radius: 15px;
     color: #ffffff;
     padding: 20px;
-    margin: 0 20px;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    flex-basis: 200px;
+    -ms-flex-preferred-size: 200px;
+        flex-basis: 200px;
     font-weight: 600;
     background-size: 200% auto;
-    transition: 0.15s ease-in;
-    margin: 1rem 0;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    margin: 1rem 20px;
 }
 
 .buttons > *:hover {
     background-position: right center;
+}
+
+.sections {
+    background-color: #fbfbfb;
+}
+
+.content {
+    background-color: #fff;
+    box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 500px;
+}
+
+.data {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 2px dotted var(--main-color);
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.data > * {
+    margin: 0 10px;
+}
+
+.photo {
+    background-image: url(../img/me.png);
+    background-size: cover;
+    min-width: 130px;
+    min-height: 130px;
+    box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
+    border-radius: 100%;
+}
+
+.data > ul {
+    list-style-type: none;
+    padding: 0;
+    line-height: 2.5;
+}
+
+.detail {
+    color: var(--main-color);
+}
+
+.description {
+    padding: 0 20px;
+    text-align: justify;
+    flex: 1;
 }
 
 footer {
@@ -129,7 +196,6 @@ footer {
     padding: 1em 0;
     text-align: center;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     background-color: #fff;
 }

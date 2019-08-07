@@ -199,6 +199,7 @@ section > h2 {
         grid-template-columns: 1fr;
         text-align: center;
         grid-gap: 0;
+        word-break: break-all;
     }
 }
 
@@ -339,6 +340,105 @@ section > h2 {
 }
 
 .overlay_button:hover {
+    background-position: right center;
+}
+
+.contact {
+    padding-bottom: 100px;
+}
+
+.content_contact {
+    background-color: #fff;
+    box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: stretch;
+}
+
+.content_contact > * {
+    padding: 40px;
+}
+
+.contact_info {
+    background-color: var(--main-color);
+    color: white;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact_info {
+        width: unset;
+    }
+}
+
+.contact_info > p {
+    width: 75%;
+    flex: 1;
+}
+
+.contact_info > img, .contact_bottominfo > .media {
+    filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.contact_bottominfo > .media {
+    margin: 0 0 0 -1%;
+}
+
+.contact_form {
+    flex: 1;
+}
+
+.contact_form > h2 {
+    margin-top: 0;
+}
+
+.contact_form input, .form_message {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color: #fbfbfb;
+    transition: .5s ease;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.contact_form input:focus {
+    background-color: #f0f0f0;
+}
+
+.form_message {
+    height: 100px;
+    resize: none;
+    overflow: auto;
+}
+
+.form_button {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
+    background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-position: left center;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    background-size: 200% auto;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    float: right;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+
+.form_button:hover {
     background-position: right center;
 }
 

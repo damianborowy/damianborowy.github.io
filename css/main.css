@@ -427,7 +427,7 @@ section > h2 {
 
 @media screen and (max-width: 1200px) {
     .contact_info {
-        width: unset;
+        width: 100%;
     }
 }
 

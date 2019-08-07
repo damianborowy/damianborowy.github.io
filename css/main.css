@@ -398,8 +398,8 @@ section > h2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap-reverse;
-        flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
@@ -442,6 +442,10 @@ section > h2 {
 .contact_info > img, .contact_bottominfo > .media {
     -webkit-filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
             filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.contact_bottominfo {
+    padding-top: 30px;
 }
 
 .contact_bottominfo > .media {

@@ -132,14 +132,17 @@ section > h2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: -30px;
 }
 
 .buttons > * {
-    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
     background-position: left center;
     border-radius: 15px;
@@ -164,20 +167,32 @@ section > h2 {
 
 .content {
     background-color: #fff;
-    box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
     padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .data {
     font-weight: 600;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     border-right: 2px dotted var(--main-color);
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: auto;
 }
 
@@ -187,7 +202,9 @@ section > h2 {
 }
 
 .data ul li {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto 5px 1fr;
     grid-template-columns: auto 1fr;
     line-height: 1.3;
     padding: 5px;
@@ -196,6 +213,7 @@ section > h2 {
 
 @media screen and (max-width: 600px) {
     .data ul li {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         text-align: center;
         grid-gap: 0;
@@ -208,9 +226,11 @@ section > h2 {
     background-size: cover;
     min-width: 130px;
     min-height: 130px;
-    box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
+            box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     border-radius: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .data > ul {
@@ -226,7 +246,9 @@ section > h2 {
 .description {
     padding: 30px;
     text-align: justify;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     min-width: 400px;
 }
 
@@ -244,11 +266,14 @@ section > h2 {
 }
 
 .content > .skills_frame {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     padding: 20px;
     line-height: 2;
     text-align: center;
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
 }
 
 .skills_frame > img {
@@ -272,6 +297,7 @@ section > h2 {
 }
 
 .portfolio {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
@@ -293,13 +319,23 @@ section > h2 {
     right: 0;
     width: 100%;
     height: 100%;
+    background-image: -webkit-gradient(linear, 
+                    left top, left bottom, 
+                    from(rgba(0, 0, 0, 0.6)), 
+                    to(rgba(0, 123, 255, 0.6)));
+    background-image: -o-linear-gradient(top, 
+                    rgba(0, 0, 0, 0.6), 
+                    rgba(0, 123, 255, 0.6));
     background-image: linear-gradient(to bottom, 
                     rgba(0, 0, 0, 0.6), 
                     rgba(0, 123, 255, 0.6));
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
     transition: .5s ease;
     color: white;
     padding: 20px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .portfolio > div:hover .overlay {
@@ -319,8 +355,8 @@ section > h2 {
 }
 
 .overlay_button {
-    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
     background-position: left center;
     border-radius: 15px;
@@ -349,10 +385,16 @@ section > h2 {
 
 .content_contact {
     background-color: #fff;
-    box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 50px -30px rgba(0,0,0,0.75);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap-reverse;
-    align-items: stretch;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .content_contact > * {
@@ -363,9 +405,16 @@ section > h2 {
     background-color: var(--main-color);
     color: white;
     line-height: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     width: 400px;
 }
 
@@ -377,11 +426,14 @@ section > h2 {
 
 .contact_info > p {
     width: 75%;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .contact_info > img, .contact_bottominfo > .media {
-    filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    -webkit-filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+            filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 .contact_bottominfo > .media {
@@ -389,7 +441,9 @@ section > h2 {
 }
 
 .contact_form {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .contact_form > h2 {
@@ -402,9 +456,12 @@ section > h2 {
     margin: 10px 0;
     border-radius: 15px;
     background-color: #fbfbfb;
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
     transition: .5s ease;
     border: none;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     outline: none;
 }
 
@@ -419,8 +476,8 @@ section > h2 {
 }
 
 .form_button {
-    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: -o-linear-gradient(left, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--main-color)), color-stop(51%, var(--second-color)), to(var(--main-color)));
     background-image: linear-gradient(to right, var(--main-color) 0%, var(--second-color) 51%, var(--main-color) 100%);
     background-position: left center;
     border-radius: 15px;

@@ -11,7 +11,10 @@
         <script src="scripts/scroller.js"></script>
     </head>
     <body>
+        <!-- CODE_REVIEW ja bym umieścił nawigację wewnątrz header. Jak najbardziej pasuje ona do
+             definicji header -->
         <nav>
+            <!-- CODE_REVIEW odniosę się do tego jeszcze w css, ale im więcej klas tym lepiej -->
             <ul>
                 <li class="about_click">O mnie</li>
                 <li class="skills_click">Umiejętności</li>
@@ -43,6 +46,7 @@
         </header>
         <main>
             <section class="buttons">
+                <!-- CODE_REVIEW semantycznie lepszy byłby button, a nie div -->
                 <div class="contact_click">Skontaktuj się ze mną</div>
                 <a href="cv.pdf">Zobacz moje CV</a>
             </section>
@@ -72,6 +76,7 @@
                 <h2>Umiejętności</h2>
                 <div class="content">
                     <div class="back skills_frame">
+                        <!-- CODE_REVIEW tekst alternatywny to dobra praktyka (alt="") -->
                         <img src="img/back.svg" /><br>
                         <span class="detail">Back End</span><br>
                         Node.js
@@ -124,6 +129,8 @@
             </section>
             <section class="contact">
                 <h2>Kontakt</h2>
+                <!-- CODE_REVIEW staraj się trzymać jakichś konwencji nazywania klas - poniżej raz napisałeś
+                contact po prawej a raz po lewej -->
                 <div class="content_contact">
                     <div class="contact_info">
                         <img src="img/send.svg"/>
@@ -149,6 +156,7 @@
                                     </a>
                                 </li>
                             </ul>
+                            <!-- CODE_REVIEW myślę, że zamiast strong tutaj <b> powinno być -->
                             <strong>Damian Borowy</strong><br>
                             d.m.borowy@gmail.com
                         </div>
@@ -157,6 +165,7 @@
                         <h2>Zacznijmy!</h2>
                         <form id="form">
                             <input type="text" placeholder="Nazwa">
+                            <!-- CODE_REVIEW type="email" o wiele lepsze -->
                             <input type="text" placeholder="E-mail">
                             <input type="text" placeholder="Temat">
                             <textarea class="form_message" type="text" placeholder="Wiadomość"></textarea>
@@ -172,3 +181,17 @@
         </footer>
     </body>
 </html>
+
+<!-- CODE_REVIEW -->
+<!-- W małych szerokościach formularz kontaktowy wygląda średnio. -->
+<!-- Ogólnie strona bardzo dobrze napisana, bardzo ładna i intuicyjna. -->
+<!-- Linki otwierają się w tej samej karcie - o ile często powinny, to np. w przypadku mediów społecznościowych
+lepiej jest, gdy się otwierają na nowej (target="_blank")-->
+
+<!-- Ocena końcowa:
+    Code quality : 9.5/10
+    Design quality : 9/10
+    Business quality : 10/10
+    Features quality : 10/10
+    RAZEM: 38.5/40
+-->

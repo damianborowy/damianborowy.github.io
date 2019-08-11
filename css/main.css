@@ -22,11 +22,15 @@ body {
 main {
     background-color: #fbfbfb;
 }
-
+/* CODE_REVIEW Dobre zastosowanie stylowania po tagach */
 a {
     text-decoration: none;
 }
 
+
+/* CODE_REVIEW powinno się stylować po tagach tylko w przypadku bardzo ogólnych właściwości.
+Im większy projekt tym bardziej jest to ważne, ale w małych projektach lepiej trzymać się dobrych
+nawyków i stylować jak najwięcej po klasach. */
 nav {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.9);
@@ -41,7 +45,8 @@ nav ul {
     text-align: right;
     padding: 0 2%;
 }
-
+/* CODE_REVIEW jak wyżej, a dodatkowo zaczyna być za dużo selektorów. Swoją drogą ul można tutaj pominąć
+w twoim przypadku, ale nadal zalecam stylować po dobrze nazwanych (o tym niżej) klasach. */
 nav ul li {
     display: inline-block;
     cursor: pointer; 
@@ -63,6 +68,7 @@ nav ul li:before {
     bottom: 0;
     left: 0;
     background-color: var(--main-color);
+    /* CODE_REVIEW często display: none lub opacity: 0 lepiej zastępują visibility: hidden  */
     visibility: hidden;
     -webkit-transform: scaleX(0);
         -ms-transform: scaleX(0);
@@ -81,6 +87,8 @@ nav ul li:hover:before {
 
 @media screen and (max-width: 500px) {
     nav {
+        /* CODE_REVIEW użyłby display: none (różni się tym, że element znika ze strony całkowicie
+        podczas gdy w visibility: hidden robi się przezroczysty). Spójrz tutaj https://tinyurl.com/y2pgvsjx  */
         visibility: hidden;
     }
 
@@ -241,6 +249,7 @@ section > h2 {
 }
 
 .data > ul {
+    /* CODE_REVIEW wystarczy list-style: none; */
     list-style-type: none;
     line-height: 2.5;
 }
@@ -350,6 +359,8 @@ section > h2 {
     opacity: 1;
 }
 
+/* CODE_REVIEW chyba lepiej byłoby umieścić te obrazki jako elementy img, ale nie jestem pewny w 100%.
+Obrazek jako tło nie daje możliwości wpisania tekstu alternatywnego. */
 .codewars {
     background-image: url(../img/codewars.png);
 }
@@ -520,3 +531,8 @@ footer {
     box-shadow: 0px 0px 5px 0px rgba(176,176,176,0.5);
     background-color: #fff;
 }
+
+
+/* CODE_REVIEW */
+/* Jak każdy początkujący masz kilka niekonsekwencji w nazywaniu klas. Polecam bardzo korzystanie z jakiejś
+metodologii nazywania klas - np. BEM. Spełnia się świetnie w dużych i małych projektach. */

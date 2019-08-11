@@ -1,3 +1,5 @@
+// CODE_REVIEW sam to napisałeś, czy kopiuj wklej?
+// Jak sam to szanuje, jak kopiuj wklej to też, ale za coś innego 😜
 $(document).ready(function (){
     $(".about_click").click(function (){
         $('html, body').animate({
